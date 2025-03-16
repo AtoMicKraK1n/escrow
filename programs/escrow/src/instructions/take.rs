@@ -18,6 +18,7 @@ pub struct Take<'info> {
         payer = taker,
         associated_token::mint = mint_a,
         associated_token::authority = taker,
+        associated_token::token_program = token_program,
     )]
     pub taker_ata_a: InterfaceAccount<'info, TokenAccount>,
 
@@ -25,6 +26,7 @@ pub struct Take<'info> {
         mut,
         associated_token::mint = mint_b,
         associated_token::authority = taker,
+        associated_token::token_program = token_program,
     )]
     pub taker_ata_b: InterfaceAccount<'info, TokenAccount>,
 
@@ -33,6 +35,7 @@ pub struct Take<'info> {
         payer = taker,
         associated_token::mint = mint_b,
         associated_token::authority = maker,
+        associated_token::token_program = token_program,
     )]
     pub maker_ata_b: InterfaceAccount<'info, TokenAccount>,
 
@@ -51,6 +54,7 @@ pub struct Take<'info> {
         mut,
         associated_token::mint = mint_a,
         associated_token::authority = escrow,
+        associated_token::token_program = token_program,
     )]
     pub vault: InterfaceAccount<'info, TokenAccount>,
 
