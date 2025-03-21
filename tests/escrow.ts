@@ -205,7 +205,7 @@ describe("escrow", () => {
   it("Take Escrow Worked!", async () => {
     const tx = await program.methods
     .takerDepositWithdrawAndClose()
-    .accountsStrict({
+    .accountsPartial({
       taker: taker.publicKey,
       maker: maker.publicKey,
       mintA: mintA,
@@ -216,8 +216,8 @@ describe("escrow", () => {
       escrow: escrow,
       vault: vault,
       tokenProgram: TOKEN_PROGRAM_ID,
-      associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
-      systemProgram: SystemProgram.programId
+      // associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
+      // // systemProgram: SystemProgram.programId
     })
     .signers([taker])
     .rpc();
